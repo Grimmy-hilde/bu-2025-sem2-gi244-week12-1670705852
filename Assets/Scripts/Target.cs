@@ -57,7 +57,12 @@ public class Target : MonoBehaviour, IPointerClickHandler
         {
             Destroy(this.gameObject);
             var gm = FindAnyObjectByType<GameManager>();
-            gm.UpdateScore(-10);
+            if (this.CompareTag("Bad"))
+            { }
+            else
+            {
+                gm.UpdateScore(-point);
+            }
         }
     }
 }
